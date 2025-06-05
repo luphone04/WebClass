@@ -1,344 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cool Static Test Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lu Phone Maw – Portfolio Test</title>
   <style>
     /* Reset & Base */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #0e0e0e;
-      color: #f0f0f0;
+      background: #0d0d0d;
+      color: #e0e0e0;
       line-height: 1.6;
-      overflow-x: hidden;
     }
-    a {
-      color: #1abc9c;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
+    a { text-decoration: none; color: #4caf50; transition: color 0.3s; }
+    a:hover { color: #a5d6a7; }
 
     /* Header & Navigation */
     header {
       background: #111;
       padding: 1rem 2rem;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      border-bottom: 2px solid #1abc9c;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #4caf50;
     }
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #1abc9c;
-    }
-    nav {
-      float: right;
+    header h1 {
+      font-size: 1.75rem;
+      color: #4caf50;
     }
     nav a {
       margin-left: 1.5rem;
-      font-size: 1rem;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: #16a085;
-    }
-    header::after {
-      content: "";
-      display: table;
-      clear: both;
+      font-weight: 500;
     }
 
-    /* Hero / Banner */
+    /* Hero Section */
     .hero {
-      background: url('https://via.placeholder.com/1200x500') center/cover no-repeat;
-      height: 60vh;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
+      height: 60vh;
       text-align: center;
-      position: relative;
+      background: linear-gradient(135deg, #4caf50, #1b5e20);
+      animation: pulse 8s infinite alternate;
+      color: #fff;
     }
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-    }
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      animation: fadeIn 2s ease-in-out;
-    }
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-      color: #1abc9c;
+    .hero h2 {
+      font-size: 2.5rem;
+      letter-spacing: 1px;
       text-transform: uppercase;
-      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
     }
     .hero p {
-      font-size: 1.2rem;
-      color: #ddd;
+      font-size: 1.1rem;
+      max-width: 600px;
     }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Main Content */
-    main {
-      padding: 2rem;
-    }
-    section {
-      margin-bottom: 3rem;
+    @keyframes pulse {
+      0%   { filter: brightness(1); }
+      100% { filter: brightness(1.2); }
     }
 
     /* About Section */
     .about {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      align-items: center;
+      padding: 2rem;
+      background: #1a1a1a;
     }
-    .about img {
-      flex: 1 1 300px;
-      max-width: 100%;
-      border-radius: 8px;
-      transition: transform 0.5s;
-    }
-    .about img:hover {
-      transform: scale(1.05);
-    }
-    .about-text {
-      flex: 2 1 400px;
-    }
-    .about-text h2 {
-      font-size: 2rem;
+    .about h3 {
+      font-size: 1.75rem;
+      color: #4caf50;
       margin-bottom: 1rem;
-      color: #1abc9c;
+      text-align: center;
     }
-    .about-text p {
+    .about p {
+      max-width: 700px;
+      margin: 0.5rem auto;
       font-size: 1rem;
-      margin-bottom: 1rem;
       color: #ccc;
     }
 
-    /* Services/Cards Grid */
-    .services {
+    /* Skills/Interests Grid */
+    .skills {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 1.5rem;
+      padding: 2rem;
     }
-    .service-card {
-      background: #1a1a1a;
+    .skill-card {
+      background: #222;
       border-radius: 8px;
       overflow: hidden;
-      transition: transform 0.3s, background 0.3s;
+      transition: transform 0.3s ease, background 0.3s ease;
     }
-    .service-card:hover {
+    .skill-card:hover {
       transform: translateY(-5px);
-      background: #222;
+      background: #2e2e2e;
     }
-    .service-card img {
+    .skill-card img {
       width: 100%;
       display: block;
     }
-    .service-content {
+    .skill-content {
       padding: 1rem;
     }
-    .service-content h3 {
+    .skill-content h4 {
       margin-bottom: 0.5rem;
-      color: #1abc9c;
+      color: #4caf50;
+      font-size: 1.2rem;
     }
-    .service-content p {
-      font-size: 0.95rem;
-      color: #bbb;
-    }
-
-    /* Call-to-Action Banner */
-    .cta {
-      background: linear-gradient(135deg, #1abc9c, #16a085);
-      padding: 2rem;
-      border-radius: 8px;
-      text-align: center;
-      color: #fff;
-      animation: pulse 3s infinite alternate;
-    }
-    .cta h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    .cta button {
-      background: #fff;
-      color: #16a085;
-      border: none;
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .cta button:hover {
-      background: #e0e0e0;
-    }
-    @keyframes pulse {
-      from { box-shadow: 0 0 10px rgba(26, 188, 156, 0.5); }
-      to { box-shadow: 0 0 30px rgba(26, 188, 156, 0.9); }
+    .skill-content p {
+      font-size: 0.9rem;
+      color: #ddd;
     }
 
     /* Footer */
     footer {
       background: #111;
-      padding: 1.5rem 2rem;
       text-align: center;
-      border-top: 2px solid #1abc9c;
-    }
-    footer p {
-      font-size: 0.9rem;
+      padding: 1rem;
+      font-size: 0.85rem;
       color: #777;
+      border-top: 2px solid #4caf50;
     }
-    footer a {
-      color: #1abc9c;
-      margin: 0 0.5rem;
-      font-size: 0.9rem;
-    }
+    footer a:hover { text-decoration: underline; }
   </style>
 </head>
-
 <body>
-  <!-- Header -->
   <header>
-    <div class="logo">TestSite</div>
+    <h1>Lu Phone Maw</h1>
     <nav>
       <a href="#about">About</a>
-      <a href="#services">Services</a>
+      <a href="#skills">Interests</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <!-- Hero Banner -->
-  <div class="hero">
-    <div class="hero-content">
-      <h1>Experience the Web</h1>
-      <p>Stylish static content served straight from your repo</p>
+  <section class="hero">
+    <h2>4th-Year Computer Science Undergraduate</h2>
+    <p>Passionate about Artificial Intelligence and Web Development. Exploring new technologies and building cool projects one line of code at a time.</p>
+  </section>
+
+  <section id="about" class="about">
+    <h3>About Me</h3>
+    <p><strong>Name:</strong> Lu Phone Maw</p>
+    <p><strong>Year:</strong> 4th Year, Computer Science Student</p>
+    <p><strong>Interests:</strong> Artificial Intelligence, Machine Learning, Data Science, Front-End &amp; Back-End Web Development.</p>
+    <p><strong>Currently Learning:</strong> Modern Web Technologies (HTML5, CSS3, JavaScript, React) and Frameworks to build responsive and interactive applications.</p>
+  </section>
+
+  <section id="skills" class="skills">
+    <div class="skill-card">
+      <img src="https://via.placeholder.com/400x200?text=AI+&+ML" alt="AI & ML">
+      <div class="skill-content">
+        <h4>Artificial Intelligence</h4>
+        <p>Studying neural networks, natural language processing, and computer vision. Experimenting with Python libraries like TensorFlow and PyTorch.</p>
+      </div>
     </div>
-  </div>
-
-  <main>
-    <!-- About Section -->
-    <section id="about" class="about">
-      <img src="https://via.placeholder.com/400x300" alt="About Image" />
-      <div class="about-text">
-        <h2>About This Test Page</h2>
-        <p>
-          This page is designed to showcase a more elaborate static HTML template.
-          It includes responsive layouts, animations, and placeholder assets. You can
-          modify images, text, and styles as needed to test your GitHub Pages setup.
-        </p>
-        <p>
-          Resize your browser or view on mobile to see the responsive grid and flexbox in action.
-          Hover over cards and buttons for subtle effects.
-        </p>
+    <div class="skill-card">
+      <img src="https://via.placeholder.com/400x200?text=Web+Dev" alt="Web Development">
+      <div class="skill-content">
+        <h4>Web Development</h4>
+        <p>Building dynamic, responsive websites using HTML, CSS, and JavaScript. Exploring React for front-end and Node.js for back-end.</p>
       </div>
-    </section>
-
-    <!-- Services / Features -->
-    <section id="services">
-      <h2 style="text-align: center; margin-bottom: 1rem; color: #1abc9c;">
-        Our Features
-      </h2>
-      <div class="services">
-        <div class="service-card">
-          <img src="https://via.placeholder.com/400x200" alt="Feature 1" />
-          <div class="service-content">
-            <h3>Responsive Design</h3>
-            <p>
-              Adapts to any screen size using modern CSS Grid and Flexbox techniques.
-            </p>
-          </div>
-        </div>
-        <div class="service-card">
-          <img src="https://via.placeholder.com/400x200" alt="Feature 2" />
-          <div class="service-content">
-            <h3>Animations & Effects</h3>
-            <p>
-              Subtle hover animations and keyframe effects to make your site feel alive.
-            </p>
-          </div>
-        </div>
-        <div class="service-card">
-          <img src="https://via.placeholder.com/400x200" alt="Feature 3" />
-          <div class="service-content">
-            <h3>Easy Customization</h3>
-            <p>
-              Modify colors, text, and images to fit your brand or testing needs.
-            </p>
-          </div>
-        </div>
-        <div class="service-card">
-          <img src="https://via.placeholder.com/400x200" alt="Feature 4" />
-          <div class="service-content">
-            <h3>Clean & Minimal</h3>
-            <p>
-              A sleek, dark-themed template that focuses on content and readability.
-            </p>
-          </div>
-        </div>
+    </div>
+    <div class="skill-card">
+      <img src="https://via.placeholder.com/400x200?text=Data+Science" alt="Data Science">
+      <div class="skill-content">
+        <h4>Data Science</h4>
+        <p>Analyzing datasets with Python (Pandas, NumPy) and visualizing insights. Learning about statistical models and data-driven decision making.</p>
       </div>
-    </section>
+    </div>
+    <div class="skill-card">
+      <img src="https://via.placeholder.com/400x200?text=Projects" alt="Projects">
+      <div class="skill-content">
+        <h4>Projects &amp; Portfolio</h4>
+        <p>Working on AI-powered chatbots, personal portfolio site, and collaborative group assignments. Always looking for open-source contributions.</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- Call-to-Action -->
-    <section class="cta">
-      <h2>Ready to Deploy?</h2>
-      <p>
-        Just drop this file in your repository root, enable GitHub Pages, and you’re live!
-      </p>
-      <button onclick="window.location.reload();">Refresh &amp; Test</button>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" style="margin-top: 3rem;">
-      <h2 style="text-align: center; margin-bottom: 1rem; color: #1abc9c;">
-        Get in Touch
-      </h2>
-      <form style="max-width: 600px; margin: 0 auto; background: #1a1a1a; padding: 1.5rem; border-radius: 8px;">
-        <label for="name">Name</label><br />
-        <input type="text" id="name" name="name" placeholder="Your Name" required
-               style="width: 100%; padding: 0.5rem; margin: 0.5rem 0; border-radius: 4px; border: none;" /><br />
-
-        <label for="email">Email</label><br />
-        <input type="email" id="email" name="email" placeholder="you@example.com" required
-               style="width: 100%; padding: 0.5rem; margin: 0.5rem 0; border-radius: 4px; border: none;" /><br />
-
-        <label for="message">Message</label><br />
-        <textarea id="message" name="message" rows="4" placeholder="Your message…" required
-                  style="width: 100%; padding: 0.5rem; margin: 0.5rem 0; border-radius: 4px; border: none;"></textarea><br />
-
-        <button type="submit"
-                style="background: #1abc9c; color: #0e0e0e; padding: 0.75rem 1.5rem; border: none; border-radius: 4px; cursor: pointer;">
-          Send Message
-        </button>
-      </form>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 • <a href="https://github.com/username/repo" target="_blank">View on GitHub</a></p>
+  <footer id="contact">
+    &copy; 2025 Lu Phone Maw •
+    <a href="https://github.com/username/repo" target="_blank">GitHub Repo</a>
   </footer>
 </body>
 </html>
