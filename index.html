@@ -1,105 +1,95 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lu Phone Maw – Portfolio Test</title>
-  <style>
-    /* Reset & Base */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #0d0d0d;
-      color: #e0e0e0;
-      line-height: 1.6;
-    }
-    a { text-decoration: none; color: #4caf50; transition: color 0.3s; }
-    a:hover { color: #a5d6a7; }
+<!DOCTYPE html> 
 
-    /* Header & Navigation */
-    header {
-      background: #111;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 2px solid #4caf50;
-    }
-    header h1 {
-      font-size: 1.75rem;
-      color: #4caf50;
-    }
-    nav a {
-      margin-left: 1.5rem;
-      font-weight: 500;
-    }
+<html lang="en"> 
 
-    /* Hero Section */
-    .hero {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 60vh;
-      text-align: center;
-      background: linear-gradient(135deg, #4caf50, #1b5e20);
-      animation: pulse 8s infinite alternate;
-      color: #fff;
-    }
-    .hero h2 {
-      font-size: 2.5rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
-    }
-    .hero p {
-      font-size: 1.1rem;
-      max-width: 600px;
-    }
-    @keyframes pulse {
-      0%   { filter: brightness(1); }
-      100% { filter: brightness(1.2); }
-    }
+<head> 
 
-    /* About Section */
-    .about {
-      padding: 2rem;
-      background: #1a1a1a;
-    }
-    .about h3 {
-      font-size: 1.75rem;
-      color: #4caf50;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-    .about p {
-      max-width: 700px;
-      margin: 0.5rem auto;
-      font-size: 1rem;
-      color: #ccc;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Lu Phone Maw</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+    <meta charset="UTF-8"> 
 
-  <section class="hero">
-    <h2>4th-Year Computer Science Undergraduate</h2>
-    <p>Passionate about Artificial Intelligence and Web Development. Exploring new technologies and building cool projects one line of code at a time.</p>
-  </section>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 
-  <section id="about" class="about">
-    <h3>About Me</h3>
-    <p><strong>Name:</strong> Lu Phone Maw</p>
-    <p><strong>Year:</strong> 4th Year, Computer Science Student</p>
-    <p><strong>Interests:</strong> Artificial Intelligence, Machine Learning, Data Science, Front-End &amp; Back-End Web Development.</p>
-    <p><strong>Currently Learning:</strong> Modern Web Technologies (HTML5, CSS3, JavaScript, React) and Frameworks to build responsive and interactive applications.</p>
-  </section>
-</body>
-</html>
+    <title>Pet Store</title> 
+
+    <link rel="stylesheet" href="styles.css"> 
+
+</head> 
+
+<body> 
+
+    <header> 
+
+        <h1>Welcome to Our Pet Store</h1> 
+
+        <nav> 
+
+            <a href="#">Home</a> 
+
+            <a href="pet.html">Pets</a> 
+
+            <a href="#contact">Contact</a> 
+
+        </nav> 
+
+    </header> 
+
+ 
+
+    <main> 
+
+        <section class="featured"> 
+
+            <h2>Featured Pets</h2> 
+
+            <div class="pet-list"> 
+
+                <div class="pet"> 
+
+                    <img src="img/dog.jpg" alt="Cute Dog"> 
+
+                    <p>Charlie - Golden Retriever</p> 
+
+                    <button onclick="adoptPet()">Adopt Now</button> 
+
+                </div> 
+
+                <div class="pet"> 
+
+                    <img src="img/cat.webp" alt="Cute Cat"> 
+
+                    <p>Milo - British Shorthair</p> 
+
+                    <button onclick="adoptPet()">Adopt Now</button> 
+
+                </div> 
+
+            </div> 
+
+        </section> 
+
+    </main> 
+
+ 
+
+    <footer id="contact"> 
+
+        <!-- <div class="contact-container" id="contact"> -->
+            <div class="address">
+                <h3>Our Address</h3>
+                <p>123 Pet Street, Animal City, PA 12345</p>
+                <p>Contact us at: <strong>info@petstore.com</strong></p>
+            </div>
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3877.757578305561!2d100.83534157520154!3d13.611612686765893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311d430e775155f9%3A0xf01923824353260!2sAssumption%20University%20Suvarnabhumi%20Campus!5e0!3m2!1sen!2sth!4v1749912093610!5m2!1sen!2sth" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>            </div>     
+        
+        <!-- </div> -->
+
+    </footer> 
+
+ 
+
+    <script src="script.js"></script> 
+
+</body> 
+
+</html> 
+
